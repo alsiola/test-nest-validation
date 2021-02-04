@@ -4,7 +4,7 @@ Demonstrates an issue with validation using `ValidationPipe`. My expectation is 
 
 ## Setup
 
-`BodyDTO` has one property (`name`), which is protected by a `@NotEquals(null)` decorator.
+`BodyDTO` has one property (`age`), which is protected by an `@IsNumber` decorator.
 
 A global validation pipe is applied in `main.ts`.
 
@@ -18,4 +18,4 @@ The validation on these endpoints is identical
 
 ## Finding
 
-A body of `{ name: null }` fails validation for `/works` (with `ValidationPipe` passed directly to `@Body`), but passes validation for `/broken` (relying on the global validation pipe).
+A body of `{ age: 'a string' }` fails validation for `/works` (with `ValidationPipe` passed directly to `@Body`), but passes validation for `/broken` (relying on the global validation pipe).

@@ -1,6 +1,6 @@
-import { NotEquals } from 'class-validator';
+import { IsNumber } from 'class-validator';
 
 export class BodyDTO {
-  @NotEquals(null)
-  name!: string;
+  @IsNumber()
+  age!: number;
 }

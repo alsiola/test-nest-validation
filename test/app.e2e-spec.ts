@@ -18,7 +18,7 @@ describe('AppController (e2e)', () => {
   it('/broken (GET)', async () => {
     const response = await request(app.getHttpServer())
       .post('/broken')
-      .send({ name: null });
+      .send({ age: 'a string' });
 
     expect(response.status).toBe(400);
   });
@@ -26,7 +26,7 @@ describe('AppController (e2e)', () => {
   it('/works (GET)', async () => {
     const response = await request(app.getHttpServer())
       .post('/works')
-      .send({ name: null });
+      .send({ age: 'a string' });
 
     expect(response.status).toBe(400);
   });
