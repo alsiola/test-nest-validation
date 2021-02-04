@@ -12,10 +12,10 @@ There are two endpoints - `POST /works` and `POST /broken`. They both use the sa
 
 Endpoint `POST /works` additionally passes `ValidationPipe` to the `@Body` decorator - `@Body(ValidationPipe)`
 
-## Expectation
+## Expected bahaviour
 
 The validation on these endpoints is identical
 
-## Finding
+## Actual behaviour
 
 A body of `{ age: 'a string' }` fails validation for `/works` (with `ValidationPipe` passed directly to `@Body`), but passes validation for `/broken` (relying on the global validation pipe).
